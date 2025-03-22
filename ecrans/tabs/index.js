@@ -2,6 +2,7 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeScreen from '../home';
+import Messages from '../Messages';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,7 +12,9 @@ const BottomTabs = () => {
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
+        headerShown:false
       }}
+      
     >
       <Tab.Screen
         name="Home"
@@ -25,7 +28,7 @@ const BottomTabs = () => {
       />
       <Tab.Screen
         name="Notifications"
-        component={HomeScreen}
+        component={Messages}
         options={{
           tabBarLabel: 'Updates',
           tabBarIcon: ({ color, size }) => (
