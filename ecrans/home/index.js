@@ -2,6 +2,7 @@ import { View, Text, Image, ScrollView, FlatList } from 'react-native'
 import React from 'react'
 import dashboardStyle from './style.js';
 import { fakeAppartement } from '../../fakeData/fakeActivity.js';
+import AddAppartement from '../../composantes/addAppartement.js';
 
 const HomeScreen = () => {
   console.log(fakeAppartement)
@@ -18,8 +19,8 @@ const HomeScreen = () => {
         />
       </View>
 
-      <FlatList
-        horizontal={true}
+      {/* <FlatList
+        // horizontal={true}
         data={fakeAppartement}
         keyExtractor={item => item.num_App}
         showsHorizontalScrollIndicator={false}
@@ -33,7 +34,11 @@ const HomeScreen = () => {
             )
           }
         }
-      />
+      /> */}
+
+      <View style={{display :'flex', flexDirection: 'row'}}>
+        <AddAppartement/>     
+      </View>
 
     </ScrollView>
   )
